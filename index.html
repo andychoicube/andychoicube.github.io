@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>최진우 (Andrew Choi) | 공학 포트폴리오</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css" />
+  <style>
+    :root {
+      --bg-color: #f8f9fa;
+      --card-bg: #ffffff;
+      --text-main: #212529;
+      --text-muted: #6c757d;
+      --accent: #0f172a;
+      --border: #e9ecef;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.65;
+      padding: 3rem 1.5rem;
+      word-break: keep-all;
+    }
+
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    /* 프로필 헤더 */
+    .profile-section {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      background: var(--card-bg);
+      padding: 3rem;
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      margin-bottom: 2rem;
+    }
+
+    .profile-image {
+      width: 156px;
+      height: 156px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top;
+      box-shadow: 0 6px 20px rgba(15, 23, 42, 0.1);
+      border: 4px solid #ffffff;
+      flex-shrink: 0;
+    }
+
+    .profile-info h1 {
+      font-size: 2.1rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.35rem;
+    }
+
+    .meta-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .meta-badge {
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      background: #f1f5f9;
+      color: #475569;
+    }
+
+    .profile-info p {
+      color: var(--text-main);
+      font-size: 1.02rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.7rem 1.4rem;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background: #1e293b;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: #ffffff;
+      color: var(--accent);
+      border: 1px solid #ced4da;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      background: #f8f9fa;
+      transform: translateY(-2px);
+    }
+
+    /* 본문 섹션 */
+    section {
+      background: var(--card-bg);
+      padding: 3rem;
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+    }
+
+    h2::before {
+      content: "";
+      display: inline-block;
+      width: 4px;
+      height: 20px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .tag {
+      background: #f1f3f5;
+      color: #495057;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .project-card {
+      border-left: 2px solid var(--border);
+      padding-left: 1.5rem;
+      margin-top: 1.2rem;
+    }
+
+    .project-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .project-status {
+      display: inline-block;
+      font-size: 0.85rem;
+      color: #0f172a;
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      padding: 0.2rem 0.65rem;
+      border-radius: 6px;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-details h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin: 1.5rem 0 0.5rem 0;
+    }
+
+    .project-details p, .project-details ul {
+      color: #495057;
+      font-size: 0.96rem;
+    }
+
+    .project-details ul {
+      padding-left: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .project-details li {
+      margin-bottom: 0.4rem;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 600px) {
+      .profile-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1.5rem;
+      }
+      .meta-badges, .btn-group {
+        justify-content: center;
+      }
+      section {
+        padding: 2rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- 프로필 영역 -->
+    <header class="profile-section">
+      <img src="profile.png" alt="최진우 프로필 사진" class="profile-image" />
+      <div class="profile-info">
+        <h1>최진우 <span style="font-size: 1.25rem; color: #6c757d; font-weight: 500;">(Andrew Choi)</span></h1>
+        <div class="meta-badges">
+          <span class="meta-badge">@andychoicube</span>
+          <span class="meta-badge">부산대학교 정보컴퓨터공학부</span>
+          <span class="meta-badge">컴퓨터공학전공</span>
+        </div>
+        <p>
+          오리가미(Origami) 접힘 기구학과 초박형 경량 소재를 결합하여<br />
+          지상·수상·공중을 넘나드는 다중 환경 변형 로봇을 연구합니다.
+        </p>
+        <div class="btn-group">
+          <a href="https://github.com/andychoicube" target="_blank" rel="noopener noreferrer" class="btn btn-outline">GitHub 저장소 방문</a>
+          <a href="resume.pdf" download="최진우_이력서.pdf" class="btn btn-primary">이력서 PDF 다운로드</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- 현재 관심 분야 -->
+    <section>
+      <h2>현재 관심 분야</h2>
+      <div class="tags">
+        <span class="tag">소프트 로보틱스 (Soft Robotics)</span>
+        <span class="tag">오리가미 기구학 (Origami Kinematics)</span>
+        <span class="tag">다중 환경 이동 제어 (Multimodal Locomotion)</span>
+        <span class="tag">임베디드 시스템 설계</span>
+      </div>
+      <p style="color: #495057;">
+        평면 시트(Sheet) 형태의 유연한 구조가 접힘 패턴에 따라 입체적으로 변형되는 오리가미 공학에 깊은 관심을 가지고 있습니다. 
+        단일 구동 메커니즘의 한계를 넘어 환경 변화에 맞춰 형태를 전환(Morphing)하는 하드웨어 설계와 임베디드 제어 알고리즘을 탐구합니다.
+      </p>
+    </section>
+
+    <!-- 대표 프로젝트 소개 -->
+    <section>
+      <h2>대표 프로젝트</h2>
+      <div class="project-card">
+        <div class="project-title">오리가미(Origami) 구조 기반 육·해·공 초박형 다중 환경 변형 로봇</div>
+        <div class="project-status">향후 연구 프로젝트 기획안 (진행 예정)</div>
+
+        <div class="project-details">
+          <h3>1. 문제 정의</h3>
+          <p>
+            기존의 소형 탐사 로봇은 바퀴·프로펠러·날개 등 단일 환경에만 최적화된 구조를 가져 지상, 수상, 공중이 복합된 재난 현장이나 좁은 틈새를 동시에 돌파하는 데 한계가 있습니다. <strong>오리가미 접힘 메커니즘과 초박형 유연 기판</strong>을 결합해 휴대 시에는 얇은 시트 형태를 유지하고, 투입 환경에 따라 스스로 형태를 변형하여 육·해·공 모두 이동할 수 있는 로봇 플랫폼을 구상했습니다.
+          </p>
+
+          <h3>2. 담당 역할</h3>
+          <ul>
+            <li><strong>오리가미 기구 설계:</strong> 지상 크롤링(Crawling), 수면 부유 및 추진, 공중 활공 모드로 전환 가능한 접이식 힌지(Hinge) 패턴 및 초경량 프레임 설계</li>
+            <li><strong>구동 및 제어 시스템 구현:</strong> 형상기억합금(SMA) 및 초소형 액추에이터를 제어하여 접힘 각도를 조절하는 마이크로컨트롤러 펌웨어 개발</li>
+          </ul>
+
+          <h3>3. 사용 기술</h3>
+          <ul>
+            <li><strong>소프트웨어 및 시뮬레이션:</strong> Python, C/C++, Origami Simulator (접힘 기구학 및 응력 분석)</li>
+            <li><strong>하드웨어 및 소재:</strong> 초박형 복합 필름·폴리머 기판, 초소형 MCU, 형상기억합금(SMA) 및 마이크로 모터 액추에이터</li>
+          </ul>
+
+          <h3>4. 목표 결과</h3>
+          <p>
+            별도의 부품 교체 없이 실시간 형태 변형만으로 평지 주행, 수면 이동, 공중 활공이 모두 가능한 초박형 다중 환경 로봇 프로토타입을 구축하고 모드 전환 효율을 검증할 예정입니다.
+          </p>
+
+          <h3>5. 데모 및 소스 코드 링크</h3>
+          <div class="btn-group" style="margin-top: 1rem;">
+            <a href="https://github.com/andychoicube" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.88rem;">소스 코드 (GitHub)</a>
+            <a href="#demo" onclick="alert('프로토타입 제작 및 주행·활공 테스트 완료 후 시연 영상이 업데이트될 예정입니다.'); return false;" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.88rem;">데모 시연 (진행 예정)</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © 2026 최진우 (andychoicube) · 부산대학교 정보컴퓨터공학부 · 공학작문및발표 포트폴리오
+    </footer>
+  </div>
+</body>
+</html>
